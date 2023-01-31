@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "654581e3-6963-4be9-b740-dd8a10ae8082",
+		"name": "NodeJS27",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24487689"
+	},
+	"item": [
+		{
+			"name": "get User all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{domain}}/user/getUser"
+			},
+			"response": []
+		},
+		{
+			"name": "get User id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{domain}}/user/getUserId/2"
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"full_name\": \"Nguyen Ban A\",\r\n    \"email\": \"banh9@gmail.com\",\r\n    \"pass_word\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/user/createUser"
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"full_name\": \"hello world\",\r\n    \"email\": \"ban4@gmail.com\",\r\n    \"pass_word\": \"123464\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/user/updateUser/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Food",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{domain}}/food/getFood"
+			},
+			"response": []
+		},
+		{
+			"name": "get Like all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{domain}}/like/getLike"
+			},
+			"response": []
+		},
+		{
+			"name": "get Like Id User all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{domain}}/like/getLikeIdUser/1"
+			},
+			"response": []
+		},
+		{
+			"name": "get Like Id Restaurant all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{domain}}/like/getLikeIdRes/1"
+			},
+			"response": []
+		},
+		{
+			"name": "create Like",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 16,\r\n    \"res_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/like/createLike"
+			},
+			"response": []
+		},
+		{
+			"name": "delete Like",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/api/like/deleteLikeIdUser/1"
+			},
+			"response": []
+		},
+		{
+			"name": "get Rate all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/rate/getRate"
+			},
+			"response": []
+		},
+		{
+			"name": "get Rate Id User all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/rate/getRateIdUser/1"
+			},
+			"response": []
+		},
+		{
+			"name": "get Rate Id Restaurant all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/rate/getRateIdRes/1"
+			},
+			"response": []
+		},
+		{
+			"name": "create Rate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 6,\r\n    \"res_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/rate/createRate"
+			},
+			"response": []
+		},
+		{
+			"name": "create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"16\",\r\n    \"food_id\": \"1\",\r\n    \"amount\": 123456,\r\n    \"code\": 123\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/order/createOrder"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}
